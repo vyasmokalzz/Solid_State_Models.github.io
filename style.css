@@ -1,0 +1,115 @@
+:root{
+    --grey : #505050;
+}
+
+*{
+    background-color: rgb(20,20,20);
+    color: white;
+}
+
+.select{
+    background-color: var(--grey);
+    border-radius: 2px;
+    padding: 4px;
+    margin: 2px;
+    display: inline;
+}
+
+#select{
+    cursor: pointer;
+}
+
+#controls{
+    padding: 5px;
+}
+
+#x{
+    background-color: red;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 4px;
+}
+#y{
+    background-color: blue;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 4px;
+}
+#z{
+    background-color: green;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 4px;
+}
+#x,#y,#z{
+    margin: 2px;
+    padding: 2px;
+    margin-right: 1vw;
+}
+
+input:focus{
+    outline: none;
+}
+
+#miller{
+    display: flex;
+    margin: 2px;
+    padding: 2px;
+    background-color: var(--grey)
+}
+
+
+.miller{
+    background-color: var(--grey);
+}
+
+.minp{
+    background-color: white;
+    color: black;
+    width: 4vw;
+    border-radius: 4px;
+}
+
+#hkl{
+    display: flex;
+    margin-left: 1vw;
+}
+
+#h,#k,#l{
+    margin-right: 1vw;
+}
+
+#axes{
+    display: flex;
+    position: absolute;
+    right: 4vw;
+}
+.axes{
+    margin-left: 2vw;
+    margin-right: 1vw;
+}
+
+.box{
+    cursor:grab;
+}
+
+.box:active{
+    cursor: grabbing;
+}
+
+#sketch{
+    overflow: auto;
+}
+
+#sketch:focus{
+    outline: none;
+}
+
+canvas{
+    display: block;
+}
+
+#axesLabel{
+    margin-right: 1vw;
+    padding: 2px;
+}

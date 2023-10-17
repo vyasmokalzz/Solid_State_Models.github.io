@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const d = new Date();
+        if (localStorage.getItem('time') == null) {
+            localStorage.setItem("time", d.getTime());
+        } 
+        window.onresize = function(setTime){
+            localStorage.setItem("time", d.getTime());
+        }
+        let diff = d.getTime() - localStorage.getItem("time");
+        // console.log(diff);
+        if(diff>200000){
+            localStorage.clear();
+        }
+    </script>
+    <script type="text/javascript" src="js/processing.js"></script>
+    <script src="js/test.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1 align="center">Solid State Physics</h1>
+    <div id="window">
+        <div class="select" id="controls">
+            <select name="" id="select" class="select">
+                <option value="1" id="sc">Simple Cubic</option>
+                <option value="2" id="bcc">Body Centered</option>
+                <option value="3" id="fcc">Face Centered</option>
+                <option value="4" id="hcp">Hexagonal</option>
+                <option value="5" id="dc">Diamond Cubic</option>
+                <option value="6" id="mi">Millers Indices</option>
+                <option value="7" id="triv">Triangular Void</option>
+                <option value="8" id="tetv">Tetrahedral Void</option>
+                <option value="9" id="octv">Octahedral Void</option>
+                <option value="10" id="cubv">Cubic Void</option>
+                <option value="11" id="cscl">CsCl</option>
+                <option value="12" id="nacl">NaCl</option>
+            </select>
+            <input type="checkbox" name="box" id="box" checked><label class="select" for="box" id="boxch">Box</label>
+            <div id="radio">
+                <input type="radio" value="20" id="Small" name="Size">
+                <label for="Small">Small</label>
+                <input type="radio" value="50" id="Large" name="Size" checked="checked">
+                <label for="Large">Large</label>
+            </div>
+            <div id="miller">
+                <div class="miller" id="hkl">
+                    <div class="miller">
+                        <label for="h" class="miller">h:</label><input type="number" name="h" id="h" class="minp">
+                    </div>
+                    <div class="miller">
+                        <label for="k" class="miller">k:</label><input type="number" name="k" id="k" class="minp">
+                    </div>
+                    <div class="miller">
+                        <label for="l" class="miller">l:</label><input type="number" name="l" id="l" class="minp">
+                    </div>
+                </div>
+                <div class="miller" id="axes">
+                    <input type="checkbox" class="miller" name="axes" id="showAxes" checked><label class="miller" id="axesLabel" for="axes">Show Axes</label>
+                    <label for="x" class="miller">X:</label><div id="x" name="x"></div>
+                    <label for="y" class="miller">Y:</label><div id="y" name="y"></div>
+                    <label for="z" class="miller">Z:</label><div id="z" name="z"></div>
+                </div>
+            </div>
+            </div>
+        <script src="js/main.js" type="text/processing"></script>
+        <canvas id="sketch" height="100%" width="100%" class="box"></canvas>
+    </div>
+</body>
+</html>
